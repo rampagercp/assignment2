@@ -10,7 +10,7 @@ const ClothingSchema = new Schema
     Size: String,
     Price: Number
 },
-{
+{   
     collection: "clothing"
 });
 

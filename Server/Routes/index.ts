@@ -2,30 +2,24 @@ import express from 'express';
 const router = express.Router();
 export default router;
 
+
+//create an index controller instance
+import {DisplayHomePage} from '../Controllers/index';
+
 /* GET home page. */
-router.get('/', function(req, res, next) 
-{
-  res.render('index', { title: 'Home', page: 'home' });
-});
+router.get('/', DisplayHomePage);
+
 /* GET home page. */
-router.get('/home', function(req, res, next) 
-{
-  res.render('index', { title: 'Home', page: 'home'  });
-});
+router.get('/home', DisplayHomePage);
+
 
 /* GET about page. */
 
-router.get('/about', function(req, res, next) 
-{
-  res.render('index', { title: 'About Me', page: 'about'  });
-});
+router.get('/about', DisplayAboutPage);
 
 /* GET projects page. */
 
-router.get('/projects', function(req, res, next) 
-{
-  res.render('index', { title: 'Projects', page: 'projects'  });
-});
+router.get('/projects', DisplayProjectsPage);
 
 /* GET services page. */
 
