@@ -4,7 +4,7 @@ export default router;
 
 
 //create an index controller instance
-import {DisplayHomePage} from '../Controllers/index';
+import {DisplayAboutPage, DisplayContactPage, DisplayHomePage, DisplayProjectsPage, DisplayServicesPage} from '../Controllers/index';
 
 /* GET home page. */
 router.get('/', DisplayHomePage);
@@ -23,16 +23,10 @@ router.get('/projects', DisplayProjectsPage);
 
 /* GET services page. */
 
-router.get('/services', function(req, res, next) 
-{
-  res.render('index', { title: 'Services', page: 'services'  });
-});
+router.get('/services', DisplayServicesPage);
 
 /* GET contact page. */
 
-router.get('/contact', function(req, res, next) 
-{
-  res.render('index', { title: 'Contact Me', page: 'contact'  });
-});
+router.get('/contact', DisplayContactPage);
 
 //module.exports = router;

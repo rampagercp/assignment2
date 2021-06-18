@@ -9,12 +9,8 @@ exports.default = router;
 const index_1 = require("../Controllers/index");
 router.get('/', index_1.DisplayHomePage);
 router.get('/home', index_1.DisplayHomePage);
-router.get('/about', DisplayAboutPage);
-router.get('/projects', DisplayProjectsPage);
-router.get('/services', function (req, res, next) {
-    res.render('index', { title: 'Services', page: 'services' });
-});
-router.get('/contact', function (req, res, next) {
-    res.render('index', { title: 'Contact Me', page: 'contact' });
-});
+router.get('/about', index_1.DisplayAboutPage);
+router.get('/projects', index_1.DisplayProjectsPage);
+router.get('/services', index_1.DisplayServicesPage);
+router.get('/contact', index_1.DisplayContactPage);
 //# sourceMappingURL=index.js.map

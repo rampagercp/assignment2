@@ -3,12 +3,12 @@ const Schema = mongoose.Schema; //alias for the Mongoose Schema
 
 const ClothingSchema = new Schema
 ({
-    Name: String,
-    Brand: String,
-    Category: String,
-    Colour: String,
-    Size: String,
-    Price: Number
+    name: String,
+    brand: String,
+    category: String,
+    colour: String,
+    size: String,
+    price: Number
 },
 {   
     collection: "clothing"
