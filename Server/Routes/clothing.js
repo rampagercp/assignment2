@@ -8,4 +8,5 @@ const router = express_1.default.Router();
 exports.default = router;
 const clothing_1 = require("../Controllers/clothing");
 router.get('/', clothing_1.DisplayClothingListPage);
+router.get('/edit/:id', clothing_1.DisplayEditPage);
 //# sourceMappingURL=clothing.js.map
