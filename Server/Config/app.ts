@@ -73,6 +73,10 @@ app.use(passport.session());
 // IMPLEMENT AUTHENTICATION STRATEGY
 passport.use(User.createStrategy())
 
+// SERIALIZE AND DESERIALIZE USER DATA
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 //routing happens here
 app.use('/', indexRouter);
 app.use('/clothing-list', clothingRouter); //defines a new area called clothing-list
