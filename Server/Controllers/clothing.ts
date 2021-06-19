@@ -19,7 +19,7 @@ export function DisplayEditPage(req: Request, res: Response, next: NextFunction)
 {
     let id = req.params.id;
     
-
+    
     //pass the id to db
 
     //db.clothing.find({"_id" : id})
