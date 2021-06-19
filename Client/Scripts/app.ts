@@ -1,10 +1,28 @@
-//IIFE -- IMMEDIATELY INVOKER FUNCTION EXPRESS 
 "use strict";
 
-(function(){
+(function()
+{
+    function confirmDelete()
+    {
+        $("a.delete").on("click", function (event) {
+            if (!confirm("Are you sure?"))
+            {
+                event.preventDefault();
+                location.href = '/clothing-list'
+                
+            }
 
-    function Start():void{
-        console.log("App Started");
+        })
     }
+
+    function Start(): void 
+    {
+        console.log("App Started");
+
+        confirmDelete();
+    }
+
     window.addEventListener("load", Start);
-})();
+
+
+})()

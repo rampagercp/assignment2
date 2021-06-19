@@ -11,7 +11,7 @@ const ClothingSchema = new Schema({
     category: String,
     colour: String,
     size: String,
-    price: Number
+    price: Number,
 }, {
     collection: "clothing"
 });

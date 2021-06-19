@@ -6,7 +6,7 @@ function DisplayHomePage(req, res, next) {
 }
 exports.DisplayHomePage = DisplayHomePage;
 function DisplayAboutPage(req, res, next) {
-    res.render('index', { title: 'About Me', page: 'about' });
+    res.render('index', { title: 'About', page: 'about' });
 }
 exports.DisplayAboutPage = DisplayAboutPage;
 function DisplayProjectsPage(req, res, next) {
@@ -18,7 +18,7 @@ function DisplayServicesPage(req, res, next) {
 }
 exports.DisplayServicesPage = DisplayServicesPage;
 function DisplayContactPage(req, res, next) {
-    res.render('index', { title: 'Contact Me', page: 'contact' });
+    res.render('index', { title: 'Contact', page: 'contact' });
 }
 exports.DisplayContactPage = DisplayContactPage;
 //# sourceMappingURL=index.js.map
