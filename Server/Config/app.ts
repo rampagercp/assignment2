@@ -10,9 +10,15 @@ import session from 'express-session';
 import passport from 'passport';
 import passportLocal from 'passport-local';
 
+// MODULES FOR CORS
+import cors from 'cors';  
+
 // AUTHENTICATION OBJECTS
 let localStrategy = passportLocal.Strategy; // alias
+import User from '../Models/user';
 
+// MODULE FOR AUTHENTICATION MESSAGING AND ERROR MANAGEMENT
+import flash from 'connect-flash';
 
 // ATTACH ROUTER FILES
 import indexRouter from '../Routes/index';
@@ -46,6 +52,26 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../Client')));
 app.use(express.static(path.join(__dirname, "../../node_modules")))
 
+// ADD SUPPORT FOR CORS
+app.use(cors());
+
+// SETUP EXPRESS SESSION
+app.use(session({
+  secret: DBConfig.Secret,
+  saveUninitialized: false,
+  resave: false
+
+  }));
+  
+// INITIALIZE FLASH
+app.use(flash());
+
+// INITIALIZE PASSPORT
+app.use(passport.initialize());
+app.use(passport.session());
+
+// IMPLEMENT AUTHENTICATION STRATEGY
+passport.use(User.createStrategy())
 
 //routing happens here
 app.use('/', indexRouter);
