@@ -7,11 +7,8 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const Schema = mongoose_1.default.Schema;
 const ClothingSchema = new Schema({
     name: String,
-    brand: String,
-    category: String,
-    colour: String,
-    size: String,
-    price: Number,
+    number: Number,
+    email: String
 }, {
     collection: "clothing"
 });

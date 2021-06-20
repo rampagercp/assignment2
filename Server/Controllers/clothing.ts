@@ -62,11 +62,8 @@ export function ProcessEditPage(req: Request, res: Response, next: NextFunction)
     ({
       "_id": id,
       "name": req.body.name,
-      "brand": req.body.brand,
-      "category": req.body.category,
-      "colour": req.body.colour,
-      "size": req.body.size,
-      "price": req.body.price
+      "number": req.body.number,
+      "email": req.body.email
     });
   
     // find the clothing item via db.clothing.update({"_id":id}) and then update
@@ -88,11 +85,8 @@ export function ProcessAddPage(req: Request, res: Response, next: NextFunction):
   let newContact = new Clothing
   ({
     "name": req.body.name,
-    "brand": req.body.brand,
-    "category": req.body.category,
-    "colour": req.body.colour,
-    "size": req.body.size,
-    "price": req.body.price
+    "number": req.body.number,
+    "email": req.body.email
   });
 
   // db.clothing.insert({clothing data is here...})

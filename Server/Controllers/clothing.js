@@ -35,11 +35,8 @@ function ProcessEditPage(req, res, next) {
     let updatedClothingItem = new clothing_1.default({
         "_id": id,
         "name": req.body.name,
-        "brand": req.body.brand,
-        "category": req.body.category,
-        "colour": req.body.colour,
-        "size": req.body.size,
-        "price": req.body.price
+        "number": req.body.number,
+        "email": req.body.email
     });
     clothing_1.default.updateOne({ _id: id }, updatedClothingItem, {}, (err) => {
         if (err) {
@@ -53,11 +50,8 @@ exports.ProcessEditPage = ProcessEditPage;
 function ProcessAddPage(req, res, next) {
     let newContact = new clothing_1.default({
         "name": req.body.name,
-        "brand": req.body.brand,
-        "category": req.body.category,
-        "colour": req.body.colour,
-        "size": req.body.size,
-        "price": req.body.price
+        "number": req.body.number,
+        "email": req.body.email
     });
     clothing_1.default.create(newContact, (err) => {
         if (err) {
