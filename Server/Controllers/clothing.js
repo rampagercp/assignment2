@@ -5,12 +5,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProcessDeletePage = exports.ProcessAddPage = exports.ProcessEditPage = exports.DisplayAddPage = exports.DisplayEditPage = exports.DisplayClothingListPage = void 0;
 const clothing_1 = __importDefault(require("../Models/clothing"));
+const Util_1 = require("../Util");
 function DisplayClothingListPage(req, res, next) {
     clothing_1.default.find(function (err, clothingCollection) {
         if (err) {
             return console.error(err);
         }
-        res.render('index', { title: 'Clothing List', page: 'clothing-list', clothing: clothingCollection });
+        res.render('index', { title: 'Clothing List', page: 'clothing-list', clothing: clothingCollection, displayName: Util_1.UserDisplayName(req) });
     });
 }
 exports.DisplayClothingListPage = DisplayClothingListPage;
@@ -21,12 +22,12 @@ function DisplayEditPage(req, res, next) {
             console.error(err);
             res.end(err);
         }
-        res.render('index', { title: 'Edit', page: 'update', item: clothingItemToEdit });
+        res.render('index', { title: 'Edit', page: 'update', item: clothingItemToEdit, displayName: Util_1.UserDisplayName(req) });
     });
 }
 exports.DisplayEditPage = DisplayEditPage;
 function DisplayAddPage(req, res, next) {
-    res.render('index', { title: 'Add', page: 'update', clothing: '' });
+    res.render('index', { title: 'Add', page: 'update', clothing: '', displayName: Util_1.UserDisplayName(req) });
 }
 exports.DisplayAddPage = DisplayAddPage;
 function ProcessEditPage(req, res, next) {

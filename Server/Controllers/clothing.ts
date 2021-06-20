@@ -1,5 +1,12 @@
 import express, { Request, Response, NextFunction } from 'express';
+
+//clothing model reference -db clothing
 import Clothing from '../Models/clothing';
+
+//import util functions
+import { UserDisplayName} from '../Util';
+
+//display functions
 
 export function DisplayClothingListPage(req: Request, res: Response, next: NextFunction): void
 {
@@ -11,7 +18,7 @@ export function DisplayClothingListPage(req: Request, res: Response, next: NextF
         }
 
         //render clothing list content partial page
-        res.render('index', {title: 'Clothing List', page: 'clothing-list', clothing: clothingCollection})
+        res.render('index', {title: 'Clothing List', page: 'clothing-list', clothing: clothingCollection, displayName: UserDisplayName(req) })
         
     });
 }
@@ -30,7 +37,7 @@ export function DisplayEditPage(req: Request, res: Response, next: NextFunction)
             res.end(err)
         }
         //show the edit view
-        res.render('index', { title: 'Edit', page: 'update', item: clothingItemToEdit });
+        res.render('index', { title: 'Edit', page: 'update', item: clothingItemToEdit, displayName: UserDisplayName(req)  });
 
     });
 
@@ -40,7 +47,7 @@ export function DisplayEditPage(req: Request, res: Response, next: NextFunction)
 export function DisplayAddPage(req: Request, res: Response, next: NextFunction): void
 {
     // show the edit view
-    res.render('index', { title: 'Add', page: 'update', clothing: '' });
+    res.render('index', { title: 'Add', page: 'update', clothing: '', displayName: UserDisplayName(req)  });
 }
 
 // Process Functions
