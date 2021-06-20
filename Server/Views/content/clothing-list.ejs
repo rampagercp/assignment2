@@ -1,9 +1,9 @@
-<h1>Clothing List</h1>
+<h1>Business Contacs</h1>
 <div class="row">
     <div class="col">
 
         <% if(displayName){ %>
-            <a href="/clothing-list/add" id="addButton" class="btn btn-primary mb-1"><i class="fas fa-plus-circle"></i>Add Clothing </a>
+            <a href="/clothing-list/add" id="addButton" class="btn btn-primary mb-1"><i class="fas fa-plus-circle"></i>Add Contact </a>
         <% } %>
         <!--A table goes here-->
 
@@ -12,14 +12,11 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Brand</th>
-                    <th scope="col">Category</th>
-                    <th scope="col">Colour</th>
-                    <th scope="col">Size</th>
-                    <th scope="col">Price</th>
+                    <th scope="col">Number</th>
+                    <th scope="col">Email</th>
 
                     <% if(displayName){ %>
-                    <th></th>
+                    <th></>
                     <th></th>
                     <% } %>
                 </tr>
@@ -32,11 +29,8 @@
                 <tr>
                     <th scope="row"><%= count + 1 %> </th>
                     <td><%= clothing[count].name %></td>
-                    <td><%= clothing[count].brand %></td>
-                    <td><%= clothing[count].category %></td>
-                    <td><%= clothing[count].colour %></td>
-                    <td><%= clothing[count].size %></td>
-                    <td><%= clothing[count].price %></td>
+                    <td><%= clothing[count].number %></td>
+                    <td><%= clothing[count].email %></td>
 
                     <% if(displayName){ %>
 
